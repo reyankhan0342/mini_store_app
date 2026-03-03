@@ -1,129 +1,82 @@
 🛍️ Mini Store App – Flutter E-Commerce Application
 
-A modern Flutter Mini Store Application built using MVVM architecture and Provider state management.
-The app demonstrates clean architecture principles, scalable structure, and real-world features like authentication, onboarding, API integration, cart management, localization, and session persistence.
+A modern and scalable Flutter e-commerce demo application built using MVVM architecture and Provider for state management.
+This project demonstrates clean architecture principles, proper state handling, API integration, localization, and persistent session management.
 
-📱 Overview
-
-Mini Store App is a fully responsive e-commerce demo application that includes:
-
-Splash Screen
-Onboarding Flow (One-time display)
-
-Flexible Login (Email/Password or Phone + OTP)
-
-Arabic RTL Support 🇸🇦
-
-Persistent Language Selection
-
-Session Management
-
-Product Listing from API
-
-Cart Management System
-
-Clean MVVM Architecture
-
-Modern UI with animations
-
-✨ Features
+📌 Key Features
 🔐 Authentication System
 
 Login using Email & Password
 
-Login using Phone + Static OTP
+Login using Phone + OTP (Mock Implementation)
 
-Persistent login session using SharedPreferences
+Persistent user session using SharedPreferences
 
-After first successful login:
+Automatic redirection after successful login
 
-User is redirected directly to Home Screen
+Onboarding screens displayed only on first launch
 
-Onboarding screen will never show again
+🚀 App Flow Management
 
-🚀 Splash Screen
+Splash Screen with initialization logic
 
-App initialization
+Smart navigation based on user state:
 
-Checks:
+First launch → Onboarding
 
-If user is logged in → Go to Home
+Not logged in → Login
 
-If first time → Show Onboarding
+Logged in → Home
 
-Otherwise → Show Login
-
-📖 Onboarding Screens
-
-Displayed only once
-
-Stored using SharedPreferences
-
-Clean animated UI
-
-Skip & Next navigation
+Logout → Back to Login
 
 🌐 Localization & RTL Support
 
-Full Arabic RTL UI
+Full Arabic RTL layout support 🇸🇦
 
-Language switching
+Dynamic language switching
 
 Permanent language storage
 
-Translation handled using GetX
+Implemented using GetX for translations and navigation
 
-Layout automatically adjusts for RTL
+🛍️ Product Module
 
-🛍️ Product Listing
+Products fetched from FakeStore API
 
-Products fetched from:
+API integration using HTTP package
 
-https://fakestoreapi.com/products
+Responsive GridView layout
 
-HTTP package used for API calls
+Reusable product card components
 
-Displayed in GridView
-
-Fully responsive layout
-
-Product images from assets and API
-
-Clean reusable product card widget
+Supports smooth navigation to product details
 
 📦 Product Details
 
-Product image
+Displays product image, title, description, and price
 
-Title
-
-Description
-
-Price
-
-Add to Cart button
+Add to Cart functionality
 
 Smooth navigation using GetX
 
-🛒 Cart System (Mock Implementation)
+Clean and responsive UI
 
-Add items to cart
+🛒 Cart System
 
-Remove items from cart
+Add and remove products dynamically
 
-Dynamic badge item count
+Dynamic cart badge counter
 
-Fully reactive using Provider
+Real-time reactive updates using Provider
 
-Real-time UI updates
+Fully responsive and user-friendly UI
 
-Completely responsive layout
+Prevents duplicate items in cart
 
 💾 Local Storage
 
-Implemented using:
-
-SharedPreferences
+SharedPreferences for persistent storage
 
 Stores:
 
@@ -133,93 +86,58 @@ Onboarding completion
 
 Selected language
 
-📱 Responsive Design
+🏗️ Architecture & Structure
 
-flutter_screenutil
+MVVM (Model – View – ViewModel) architecture
 
-MediaQuery
+Feature-based folder structure for scalability
 
-Adaptive layouts
+Clear separation of concerns
 
-Works across multiple screen sizes
+Services layer for API and local storage
 
-🏗️ Architecture
-MVVM (Model – View – ViewModel)
-lib/
-│
-├── core/
-│   ├── constants/
-│   ├── services/
-│   ├── widgets/
-│
-├── features/
-│   ├── auth/
-│   ├── splash/
-│   ├── onboarding/
-│   ├── home/
-│   ├── cart/
-│
-└── main.dart
-✔ Separation of Concerns
-
-UI separated from business logic
-
-ViewModels handle state
-
-Models handle data
-
-Services handle API & storage
+Scalable and maintainable codebase
 
 🧠 State Management
 
-Provider
+Provider + ChangeNotifier
 
-ChangeNotifier
+Optimized rebuilds to prevent unnecessary UI updates
 
-Clean reactive updates
+Fully reactive and responsive UI
 
-No unnecessary rebuilds
+🔌 Tech Stack
 
-🔌 Packages Used
-Package	Purpose
-provider	State management
-get	Navigation & Translation
-http	API integration
-shared_preferences	Local storage
-flutter_screenutil	Responsive design
-country_code_picker	Country code selection
-badges	Cart badge count
-🎨 UI Highlights
+Flutter – Frontend framework
 
-Modern clean design
+Provider – State management
 
-Smooth animations
+GetX – Navigation and localization
 
-Custom reusable widgets
+HTTP – API integration
 
-Consistent color theme
+SharedPreferences – Persistent storage
 
-RTL-friendly layouts
+ScreenUtil – Responsive design
 
-Grid-based product layout
+Country Code Picker – Phone login support
 
-Cart badge indicator
+Badges – Dynamic cart badge indicator
 
-🔄 Navigation
+🎯 Project Highlights
 
-Handled using:
+Production-ready folder structure
 
-GetX Navigation
+Clean and scalable architecture implementation
 
-No back navigation after login
+Session persistence and onboarding logic
 
-Controlled route flow
+Localization & RTL support
 
-Clean routing structure
+Fully responsive design across devices
 
-🔐 Session Flow Logic
-Condition	Screen
-First Launch	Onboarding
-Not Logged In	Login
-Logged In	Home
-Logout	Login
+Modern UI with smooth animations
+
+Reusable custom widgets
+
+Feature-first approach for maintainability
